@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Header = (props: any) => {
   return (
-    <header className="bg-cyan-950 bg-opacity-80 p-4 mb-10 rounded-lg">
+    <header className="hover:bg-gradient-to-r bg-gradient-to-l from-black to-indigo-950 p-4 mb-10 rounded-lg">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">

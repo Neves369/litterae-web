@@ -3,13 +3,14 @@ import { ReactReader } from "react-reader";
 
 const FullScreenEpubReader = ({ onClose, epubUrl }: any) => {
   const [location, setLocation] = useState<string | number>(0);
+  console.log("chegou: ", epubUrl);
   return (
     <div
-      className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50"
+      className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50 p-5"
       onClick={onClose}
     >
       <div
-        className="relative bg-white w-11/12 h-5/6 md:w-3/4 md:h-4/6 lg:w-2/3 lg:h-3/5 xl:w-3/5 xl:h-3/5 rounded-lg overflow-hidden"
+        className="relative bg-white w-11/12 h-full md:w-3/4 md:h-4/6 lg:w-2/3 lg:h-full xl:w-3/5 xl:h-full rounded-lg overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -32,7 +33,7 @@ const FullScreenEpubReader = ({ onClose, epubUrl }: any) => {
           </svg>
         </button>
         <ReactReader
-          url="https://react-reader.metabits.no/files/alice.epub"
+          url={epubUrl}
           location={location}
           locationChanged={(epubcfi: string) => setLocation(epubcfi)}
         />

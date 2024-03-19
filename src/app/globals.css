@@ -18,6 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  overflow-x: hidden;
   background: linear-gradient(
       to bottom,
       transparent,
@@ -30,8 +31,4 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
-
-.modal-open {
-  overflow: hidden;
 }

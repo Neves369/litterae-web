@@ -1,17 +1,14 @@
 "use client";
+import Header from "@/components/Header";
 import { app } from "@/firebase/firebase";
 import { useEffect, useState } from "react";
 import CardList from "@/components/CardList";
-
-import { getStorage, ref, list, getMetadata, listAll } from "firebase/storage";
 import { Typography } from "@material-tailwind/react";
-import Header from "@/components/Header";
-import Modal from "@/components/Modal";
-import EbookReader from "@/components/Reader";
-import FullScreenModal from "@/components/Modal";
 import FullScreenEpubReader from "@/components/Modal";
+import { getStorage, ref, list, getMetadata, listAll } from "firebase/storage";
 
 export default function Home() {
+  const [epub, setEpub] = useState();
   const INITIAL_PAGE_SIZE: number = 16;
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -100,7 +97,8 @@ export default function Home() {
     setStorageDocuments(arquivosFiltrados);
   };
 
-  const openModal = () => {
+  const openModal = (epub: any) => {
+    setEpub(epub);
     setModalIsOpen(true);
   };
 
@@ -109,12 +107,12 @@ export default function Home() {
   };
 
   return (
-    <main className="container mx-auto py-8 h-full">
+    <main className="container mx-3 py-8 h-full overflow-hidden">
       <Header
         setSearchTerm={setSearchTerm}
         loadSearchDocuments={loadSearchDocuments}
       />
-      <CardList items={storageDocuments} />
+      <CardList items={storageDocuments} openModal={openModal} />
       {searchTerm.length === 0 && (
         <div className=" mt-10 flex items-center justify-center gap-8">
           <button
@@ -127,8 +125,8 @@ export default function Home() {
           </button>
         </div>
       )}
-      {modalIsOpen && (
-        <FullScreenEpubReader onClose={closeModal} epubUrl={""} />
+      {modalIsOpen && epub && (
+        <FullScreenEpubReader onClose={closeModal} epubUrl={epub} />
       )}
     </main>
   );
