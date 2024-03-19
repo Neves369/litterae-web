@@ -107,7 +107,7 @@ export default function Home() {
   };
 
   return (
-    <main className="container mx-3 py-8 h-full overflow-hidden">
+    <main className="container mx-3 py-8 h-full overflow-x-hidden">
       <Header
         setSearchTerm={setSearchTerm}
         loadSearchDocuments={loadSearchDocuments}

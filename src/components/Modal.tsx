@@ -6,11 +6,11 @@ const FullScreenEpubReader = ({ onClose, epubUrl }: any) => {
   console.log("chegou: ", epubUrl);
   return (
     <div
-      className="fixed top-0 left-0 right-0 w-full md:h-full sm:h-5/6 flex justify-center items-center bg-black bg-opacity-50 z-50 p-5"
+      className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50 p-5"
       onClick={onClose}
     >
       <div
-        className="relative bg-white w-11/12 h-full md:w-3/4 md:h-4/6 lg:w-2/3 lg:h-full xl:w-3/5 xl:h-full rounded-lg overflow-hidden"
+        className="relative bg-white w-11/12 h-5/6 md:h-full md:w-3/4  lg:w-2/3 xl:w-3/5 rounded-lg overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <button

@@ -61,6 +61,7 @@ const Card: React.FC<CardProps> = ({ name, openModal }) => {
     <div
       className="cursor-pointer hover:mt-[-10px]"
       onClick={() => {
+        console.log("teste");
         openModal(object);
       }}
     >
