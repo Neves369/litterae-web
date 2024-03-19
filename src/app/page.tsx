@@ -119,16 +119,7 @@ export default function Home() {
             className=" hover:bg-cyan-950 text-white font-bold py-2 px-4 rounded shadow-lg"
             onClick={loadMoreDocuments}
           >
-            <Typography
-              variant="h1"
-              color="gray"
-              className="font-normal"
-              placeholder={undefined}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
-            >
-              Carregar mais...
-            </Typography>
+            <p className="font-normal text-white">Carregar mais...</p>
           </button>
         </div>
       )}
