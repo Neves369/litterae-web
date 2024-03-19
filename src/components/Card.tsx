@@ -66,7 +66,7 @@ const Card: React.FC<CardProps> = ({ name, openModal }) => {
     >
       {cover && (
         <Image
-          className="flex flex-col h-96 hover:bg-gradient-to-l bg-gradient-to-r from-sky-900 to-indigo-900 rounded-lg p-0 hover:p-1 shadow-lg"
+          className="flex flex-col lg:h-96 hover:bg-gradient-to-l bg-gradient-to-r from-sky-900 to-indigo-900 rounded-lg p-0 hover:p-1 shadow-lg"
           src={cover}
           width={400}
           height={200}

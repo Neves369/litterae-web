@@ -6,7 +6,7 @@ const FullScreenEpubReader = ({ onClose, epubUrl }: any) => {
   console.log("chegou: ", epubUrl);
   return (
     <div
-      className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50 p-5"
+      className="fixed top-0 left-0 right-0 w-full md:h-full sm:h-5/6 flex justify-center items-center bg-black bg-opacity-50 z-50 p-5"
       onClick={onClose}
     >
       <div

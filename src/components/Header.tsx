@@ -21,17 +21,17 @@ const Header = (props: any) => {
         </div>
 
         {/* Campo de Pesquisa */}
-        <div>
+        <div className="relative max-w-screen-sm">
           <input
             onChange={(e) => {
               props.setSearchTerm(e.target.value);
             }}
             type="text"
             placeholder="Pesquisar..."
-            className="shadow-lg px-4 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:bg-gray-900"
+            className="max-w-40 shadow-lg px-4 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:bg-gray-900"
           />
           <button
-            className="text-white font-bold py-2 px-4 rounded"
+            className=" z-10 text-white font-bold py-2 px-4 rounded "
             onClick={props.loadSearchDocuments}
           >
             <Image
